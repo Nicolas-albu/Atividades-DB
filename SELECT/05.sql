@@ -3,7 +3,7 @@
 -- projetos cujo código tenham os números 21 como terceiro e quarto caractere devem
 -- ser exibidos.
 
-SELECT PROJ.CD_PROJ, PROJ.NM_PROJ
+SELECT PROJ.CD_PROJ AS "CÓDIGO DO PROJETO", PROJ.NM_PROJ AS "NOME DO PROJETO"
 FROM PROJ
 WHERE (PROJ.NM_PROJ LIKE '%AMA%') 
     AND (PROJ.CD_PROJ LIKE '__21')
