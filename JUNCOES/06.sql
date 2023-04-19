@@ -1,0 +1,13 @@
+
+-- Exiba uma lista contendo o nome do funcionário e o nome das atividades
+-- executadas nos projetos dos quais ele é responsável. Não exiba linhas duplicadas.
+
+SELECT FUNCIONARIOS.NM_FUNC AS NOMES,
+       ATIVIDADES.TX_DESCRICAO AS ATIVIDADES
+FROM FUNC FUNCIONARIOS, 
+     ATIV ATIVIDADES, 
+     PROJ PROJETOS, 
+     PRJATV PROJETOS_ATIVIDADES
+WHERE FUNCIONARIOS.CD_MAT = PROJETOS.CD_RESP
+      AND PROJETOS.CD_PROJ = PROJETOS_ATIVIDADES.CD_PROJ
+      AND ATIVIDADES.CD_ATIV = PROJETOS_ATIVIDADES.CD_ATIV;
